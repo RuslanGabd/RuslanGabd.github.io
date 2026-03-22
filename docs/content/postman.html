@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Notes</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Java Notes</h1>
+    <p><a href="../index.html">← Back to home</a></p>
+
+    <h2>How would you investigate a failed API request?</h2>
+    <p>First, I would try to reproduce the issue using Postman to understand the problem.
+        Then I would check the request details, including URL, headers, authentication, and request body.
+        After that, I would analyze the response — especially the status code and error message.
+        If the issue is not clear, I would check application logs and verify the status of related services.
+        Finally, if needed, I would compare the request with a working example or escalate the issue with detailed information.
+    </p>
+    <h2>What would you do if API works in Postman but not in production?</h2>
+    <p>
+    If the API works in Postman but not in production, I would first compare the requests to identify any differences.
+    I would check authentication, such as tokens or API keys, because they may be missing, expired, or invalid in production.
+    Then I would verify environment-specific configurations like base URL, headers, and parameters.
+    After that, I would check logs on the server side to identify any errors and confirm whether the request is reaching the service.
+    I would also check network issues, such as firewall restrictions or connectivity problems.
+    Finally, I would try to reproduce the issue and compare it with a successful request to find the root cause.
+    </p>
+    <h2>CHow would you investigate a slow API?</h2>
+    <p>List, Set, Map, Queue.</p>
+</div>
+</body>
+</html>
