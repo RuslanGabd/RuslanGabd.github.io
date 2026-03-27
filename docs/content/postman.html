@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Java Notes</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
 <div class="container">
@@ -16,18 +16,54 @@
         Then I would check the request details, including URL, headers, authentication, and request body.
         After that, I would analyze the response — especially the status code and error message.
         If the issue is not clear, I would check application logs and verify the status of related services.
-        Finally, if needed, I would compare the request with a working example or escalate the issue with detailed information.
+        Finally, if needed, I would compare the request with a working example or escalate the issue with detailed
+        information.
     </p>
     <h2>What would you do if API works in Postman but not in production?</h2>
     <p>
-    If the API works in Postman but not in production, I would first compare the requests to identify any differences.
-    I would check authentication, such as tokens or API keys, because they may be missing, expired, or invalid in production.
-    Then I would verify environment-specific configurations like base URL, headers, and parameters.
-    After that, I would check logs on the server side to identify any errors and confirm whether the request is reaching the service.
-    I would also check network issues, such as firewall restrictions or connectivity problems.
-    Finally, I would try to reproduce the issue and compare it with a successful request to find the root cause.
+        If the API works in Postman but not in production, I would first compare the requests to identify any
+        differences.
+        I would check authentication, such as tokens or API keys, because they may be missing, expired, or invalid in
+        production.
+        Then I would verify environment-specific configurations like base URL, headers, and parameters.
+        After that, I would check logs on the server side to identify any errors and confirm whether the request is
+        reaching the service.
+        I would also check network issues, such as firewall restrictions or connectivity problems.
+        Finally, I would try to reproduce the issue and compare it with a successful request to find the root cause.
     </p>
     <h2>CHow would you investigate a slow API?</h2>
+    <h2>Post</h2>
+    <p>
+        We use POST for complex filtering when the request contains many parameters or nested fields, so sending JSON in
+        the request body is cleaner than using a long GET query string.
+
+        With HTTPS and authentication, GET requests are secure during transmission. However, GET parameters are still
+        exposed in URLs, browser history, and logs, so for sensitive data it is often better to use POST with a request
+        body.
+
+        POST can be used instead of GET when the request contains sensitive data, because GET parameters are exposed in
+        URLs, logs, and browser history. However, real security comes from HTTPS and proper authentication, not from the
+        HTTP method itself.
+
+        “No, POST is not idempotent by definition, but it can be implemented in an idempotent way depending on the use
+        case.”
+
+        🧠 When you SHOULD make POST idempotent
+        💳 Payments (avoid double charge)
+        📦 Order creation (avoid duplicates)
+        🔁 Retry mechanisms (network failures)
+        🚀 Senior-level answer
+
+        POST is not inherently idempotent, but in distributed systems we often design POST endpoints to be idempotent
+        using techniques like idempotency keys to ensure safe retries.
+    </p>
+    <h2>CHow would you investigate a slow API?</h2>
+    <h2>HEAD vs GEAT</h2>
+    <p>
+        The HEAD method is used less frequently than GET in business logic, but it is very useful for monitoring, health
+        checks, and validating resources without transferring the full response body. In support engineering, it helps
+        reduce load and quickly verify API availability or file metadata.
+    </p>
     <p>List, Set, Map, Queue.</p>
 </div>
 </body>
